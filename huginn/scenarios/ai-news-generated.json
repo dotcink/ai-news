@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "name": "ai-news generated",
+  "description": "Generated from config/topics.yaml",
+  "source_url": false,
+  "guid": "77f6c80cb649a51338888ff7dc8e5525",
+  "tag_fg_color": "#ffffff",
+  "tag_bg_color": "#5bc0de",
+  "icon": "gear",
+  "exported_at": "2026-04-19T12:22:46Z",
+  "agents": [
+    {
+      "type": "Agents::TriggerAgent",
+      "name": "AI Topic Filter",
+      "disabled": false,
+      "guid": "23e413134bf91a2badc02a977274c08a",
+      "options": {
+        "expected_receive_period_in_days": "2",
+        "keep_event": "true",
+        "rules": [
+          {
+            "type": "regex",
+            "value": "^(?!.*(?:招聘|广告)).*(?:LLM|agent|AI|Anthropic|OpenAI|Hugging\\ Face).*$",
+            "path": "title"
+          }
+        ],
+        "message": "{{title}}"
+      },
+      "keep_events_for": 604800,
+      "propagate_immediately": true
+    },
+    {
+      "type": "Agents::RssAgent",
+      "name": "AI - github/topics/ai",
+      "disabled": false,
+      "guid": "0765ef632408975d0251f097ee3f1851",
+      "options": {
+        "expected_update_period_in_days": "1",
+        "clean": "false",
+        "url": "http://rsshub:1200/github/topics/ai"
+      },
+      "schedule": "every_30m",
+      "keep_events_for": 604800
+    },
+    {
+      "type": "Agents::RssAgent",
+      "name": "AI - github/search/agent%20workflow/bestmatch/desc",
+      "disabled": false,
+      "guid": "13e9308454e7034bcfe4db4e5aec6761",
+      "options": {
+        "expected_update_period_in_days": "1",
+        "clean": "false",
+        "url": "http://rsshub:1200/github/search/agent%20workflow/bestmatch/desc"
+      },
+      "schedule": "every_30m",
+      "keep_events_for": 604800
+    },
+    {
+      "type": "Agents::RssAgent",
+      "name": "AI - anthropic/news",
+      "disabled": false,
+      "guid": "37d62fc9ec36d5bb844e01c8936069ed",
+      "options": {
+        "expected_update_period_in_days": "1",
+        "clean": "false",
+        "url": "http://rsshub:1200/anthropic/news"
+      },
+      "schedule": "every_30m",
+      "keep_events_for": 604800
+    },
+    {
+      "type": "Agents::RssAgent",
+      "name": "AI - anthropic/research",
+      "disabled": false,
+      "guid": "b08ac7aeb9effa0cdb76374097ec0f5c",
+      "options": {
+        "expected_update_period_in_days": "1",
+        "clean": "false",
+        "url": "http://rsshub:1200/anthropic/research"
+      },
+      "schedule": "every_30m",
+      "keep_events_for": 604800
+    },
+    {
+      "type": "Agents::RssAgent",
+      "name": "AI - huggingface/daily-papers/week/50",
+      "disabled": false,
+      "guid": "9591cc8efb7d39c356b32ec44ff7a6d8",
+      "options": {
+        "expected_update_period_in_days": "1",
+        "clean": "false",
+        "url": "http://rsshub:1200/huggingface/daily-papers/week/50"
+      },
+      "schedule": "every_30m",
+      "keep_events_for": 604800
+    },
+    {
+      "type": "Agents::TriggerAgent",
+      "name": "创业与产品 Topic Filter",
+      "disabled": false,
+      "guid": "c5109e3c2fb25a981a77067784369bf2",
+      "options": {
+        "expected_receive_period_in_days": "2",
+        "keep_event": "true",
+        "rules": [
+          {
+            "type": "regex",
+            "value": "^(?!.*(?:招聘|推广)).*(?:startup|product|founder|launch|indie\\ hacker).*$",
+            "path": "title"
+          }
+        ],
+        "message": "{{title}}"
+      },
+      "keep_events_for": 604800,
+      "propagate_immediately": true
+    },
+    {
+      "type": "Agents::RssAgent",
+      "name": "创业与产品 - hackernews/index/sources",
+      "disabled": false,
+      "guid": "3d9a6e00bae55056e5c21217a02cedba",
+      "options": {
+        "expected_update_period_in_days": "1",
+        "clean": "false",
+        "url": "http://rsshub:1200/hackernews/index/sources"
+      },
+      "schedule": "every_30m",
+      "keep_events_for": 604800
+    },
+    {
+      "type": "Agents::RssAgent",
+      "name": "创业与产品 - github/trending/daily/javascript/en",
+      "disabled": false,
+      "guid": "a0f86d4734301d91f6d9d1a369d413e6",
+      "options": {
+        "expected_update_period_in_days": "1",
+        "clean": "false",
+        "url": "http://rsshub:1200/github/trending/daily/javascript/en"
+      },
+      "schedule": "every_30m",
+      "keep_events_for": 604800
+    },
+    {
+      "type": "Agents::RssAgent",
+      "name": "创业与产品 - web/blog",
+      "disabled": false,
+      "guid": "cd29dca788d2da820e8bfacc85c64cd7",
+      "options": {
+        "expected_update_period_in_days": "1",
+        "clean": "false",
+        "url": "http://rsshub:1200/web/blog"
+      },
+      "schedule": "every_30m",
+      "keep_events_for": 604800
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "receiver": 0
+    },
+    {
+      "source": 2,
+      "receiver": 0
+    },
+    {
+      "source": 3,
+      "receiver": 0
+    },
+    {
+      "source": 4,
+      "receiver": 0
+    },
+    {
+      "source": 5,
+      "receiver": 0
+    },
+    {
+      "source": 7,
+      "receiver": 6
+    },
+    {
+      "source": 8,
+      "receiver": 6
+    },
+    {
+      "source": 9,
+      "receiver": 6
+    }
+  ],
+  "control_links": [
+
+  ]
+}

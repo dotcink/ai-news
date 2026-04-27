@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "name": "ai-news MVP",
+  "description": "RSSHub feeds for topic-based information capture",
+  "source_url": false,
+  "guid": "c6f9e6b4a5df4c15b0f7b6a4d4f2b3a1",
+  "tag_fg_color": "#ffffff",
+  "tag_bg_color": "#5bc0de",
+  "icon": "gear",
+  "exported_at": "2026-04-19T00:00:00Z",
+  "agents": [
+    {
+      "type": "Agents::TriggerAgent",
+      "name": "AI Topic Filter",
+      "disabled": false,
+      "guid": "b9b93a9d0e6c4d379c6e2df12d6d9d10",
+      "options": {
+        "expected_receive_period_in_days": "2",
+        "keep_event": "true",
+        "rules": [
+          {
+            "type": "regex",
+            "value": "(LLM|agent|Anthropic|OpenAI|Hugging Face|AI)",
+            "path": "title"
+          }
+        ],
+        "message": "{{title}}"
+      },
+      "keep_events_for": 604800,
+      "propagate_immediately": true
+    },
+    {
+      "type": "Agents::RssAgent",
+      "name": "AI - GitHub Topics",
+      "disabled": false,
+      "guid": "4d5dcdfd1fba43bb8c6a6a1f4d30a5c2",
+      "options": {
+        "expected_update_period_in_days": "1",
+        "clean": "false",
+        "url": "http://rsshub:1200/github/topics/ai"
+      },
+      "schedule": "every_30m",
+      "keep_events_for": 604800
+    },
+    {
+      "type": "Agents::RssAgent",
+      "name": "AI - Anthropic News",
+      "disabled": false,
+      "guid": "8f4edc7b5d8640a8a5ac4f36a6f6f8c1",
+      "options": {
+        "expected_update_period_in_days": "1",
+        "clean": "false",
+        "url": "http://rsshub:1200/anthropic/news"
+      },
+      "schedule": "every_30m",
+      "keep_events_for": 604800
+    },
+    {
+      "type": "Agents::RssAgent",
+      "name": "AI - Hugging Face Papers",
+      "disabled": false,
+      "guid": "6df7d74f7d024b7c8f2c7028d2dc6ed6",
+      "options": {
+        "expected_update_period_in_days": "1",
+        "clean": "false",
+        "url": "http://rsshub:1200/huggingface/daily-papers/week/50"
+      },
+      "schedule": "every_30m",
+      "keep_events_for": 604800
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "receiver": 0
+    },
+    {
+      "source": 2,
+      "receiver": 0
+    },
+    {
+      "source": 3,
+      "receiver": 0
+    }
+  ],
+  "control_links": []
+}

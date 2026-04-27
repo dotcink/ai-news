@@ -1,0 +1,39 @@
+topics:
+  - id: ai
+    name: AI
+    keywords:
+      - LLM
+      - agent
+      - AI
+      - Anthropic
+      - OpenAI
+      - Hugging Face
+    exclude_keywords:
+      - 招聘
+      - 广告
+    rsshub_routes:
+      - /github/topics/ai
+      - /github/search/agent%20workflow/bestmatch/desc
+      - /anthropic/news
+      - /anthropic/research
+      - /huggingface/daily-papers/week/50
+    top_n: 10
+    digest_window_hours: 24
+
+  - id: startup
+    name: 创业与产品
+    keywords:
+      - startup
+      - product
+      - founder
+      - launch
+      - indie hacker
+    exclude_keywords:
+      - 招聘
+      - 推广
+    rsshub_routes:
+      - /hackernews/index/sources
+      - /github/trending/daily/javascript/en
+      - /web/blog
+    top_n: 8
+    digest_window_hours: 24
